@@ -1,4 +1,4 @@
-@import url(./assets/font/Lato/stylesheet.css);
+@import url(./assets/font/stylesheet.css);
 
 :root {
     --primary-text-color: #000000;
@@ -9,8 +9,6 @@
     --nav-bg: #fae7e2;
     --navlink-underline-color: #BB5337;
     --font-lato: "Lato";
-    --lato-style-semibold: "SemiBold";
-    --lato-style-regular: "Regular";
 }
 
 *,
@@ -21,7 +19,7 @@
 
 html {
     scroll-behavior: smooth;
-    scroll-padding-top: 80px;
+    scroll-padding-top: 100px;
 }
 
 h1,
@@ -53,6 +51,38 @@ body {
     color: var(--primary-text-color);
     padding: 25px 0 114px;
 }
+
+a,
+button,
+div[class],
+input,
+textarea,
+select {
+    -webkit-tap-highlight-color: transparent;
+}
+
+/* Reset mobile styles________________________Start */
+a:focus,
+button:focus,
+input:focus,
+textarea:focus,
+select:focus {
+    outline: none;
+    box-shadow: none;
+}
+
+a:active,
+button:active {
+    background-color: transparent;
+}
+
+a:focus-visible,
+button:focus-visible {
+    outline: 2px solid #005fcc;
+    outline-offset: 2px;
+}
+
+/* Reset mobile styles________________________End */
 
 .container {
     width: 100%;
@@ -133,7 +163,6 @@ body {
 
 .nav>a {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 14px;
     line-height: 100%;
     letter-spacing: 28%;
@@ -169,11 +198,11 @@ body {
 
 .main__title>span:last-child {
     color: var(--secondary-text-color);
+    margin-left: 43px;
 }
 
 .main__text {
     font-weight: 400;
-    font-style: var(--lato-style-regular);
     font-size: 16px;
     line-height: 135%;
     letter-spacing: 3%;
@@ -214,20 +243,17 @@ body {
 
 .main__location>p>span:first-child {
     font-weight: 400;
-    font-style: var(--lato-style-regular);
     font-size: 14px;
 }
 
 .main__location>p>span:last-child {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 16px;
 }
 
 /* Services Section________________________ */
 .services__title {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 35px;
     line-height: 100%;
     letter-spacing: 3%;
@@ -268,7 +294,6 @@ body {
 
 .accordion__title {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 22px;
     line-height: 100%;
     letter-spacing: 3%;
@@ -277,7 +302,6 @@ body {
 
 .accordion__text {
     font-weight: 400;
-    font-style: var(--lato-style-regular);
     font-size: 16px;
     line-height: 135%;
     letter-spacing: 3%;
@@ -321,7 +345,6 @@ body {
 
 .works__title {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 35px;
     line-height: 100%;
     letter-spacing: 3%;
@@ -329,8 +352,9 @@ body {
     margin-bottom: 45px;
 }
 
-.works__column img {
+.works__img img {
     min-width: 150px;
+    object-fit: cover;
 }
 
 .works__column:first-child,
@@ -377,7 +401,6 @@ body {
 /* Footer________________________ */
 .footer__title {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
     font-size: 35px;
     line-height: 100%;
     letter-spacing: 3%;
@@ -405,12 +428,10 @@ body {
 
 .footer__phone-number {
     font-weight: 600;
-    font-style: var(--lato-style-semibold);
 }
 
 .footer__email {
     font-weight: 400;
-    font-style: var(--lato-style-regular);
 }
 
 .footer__christina-block {
@@ -422,7 +443,7 @@ body {
 
 .footer__christina-block>p {
     font-weight: 400;
-    font-style: Italic;
+    font-style: italic;
     font-size: 15px;
     line-height: 130%;
     letter-spacing: 5%;
@@ -444,10 +465,16 @@ body {
 
 .footer__copyright {
     font-weight: 400;
-    font-style: var(--lato-style-regular);
     font-size: 14px;
     line-height: 135%;
     letter-spacing: 3%;
+}
+
+@media only screen and (hover: hover) and (pointer: fine) {
+    .accordion:hover::before {
+        width: 100%;
+        background-color: var(--accordion-hover-color);
+    }
 }
 
 @media only screen and (max-width: 1024px) {
@@ -548,7 +575,6 @@ body {
     }
 
     .accordion__img {
-        min-width: 300px;
         text-align: center;
         margin: 0 auto;
     }
@@ -585,12 +611,12 @@ body {
         padding-top: 30px;
     }
 
-    .main__text-content {
-        text-align: center;
-    }
-
     .main__title>span {
         font-size: 30px;
+    }
+
+    .main__text-content {
+        text-align: center;
     }
 
     .main__location {
@@ -624,10 +650,6 @@ body {
         min-width: 0%;
     }
 
-    .works__img img {
-        min-width: 100%;
-    }
-
     .footer__title {
         font-size: 22px;
         text-align: center;
@@ -650,13 +672,17 @@ body {
     }
 }
 
-@media only screen and (max-width: 320px) {
+@media only screen and (max-width: 375px) {
     body {
         padding-bottom: 50px;
     }
 
     .main {
         padding-bottom: 80px;
+    }
+
+    .main__title>span {
+        font-size: 25px;
     }
 
     .works {
@@ -673,15 +699,18 @@ body {
         margin-bottom: 25px;
     }
 
-    .works__column img {
-        width: 100%;
-        height: 100%;
+    .works__img {
+        margin: 0 auto;
     }
-}
 
-@media only screen and (hover: hover) and (pointer: fine) {
-    .accordion:hover::before {
+    .works__img img {
+        min-width: 100%;
+        width: 250px;
+        height: 336px;
+    }
+
+    .works__column:last-child>.works__img:last-child img {
         width: 100%;
-        background-color: var(--accordion-hover-color);
+        height: 140px;
     }
 }
