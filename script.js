@@ -1,16 +1,19 @@
 // NavToggle and Nav
 const navToggle = document.querySelector(".nav-toggle");
 const nav = document.querySelector(".nav");
+const body = document.body;
 
 navToggle.addEventListener("click", () => {
     navToggle.classList.toggle("opened");
     nav.classList.toggle("opened");
+    body.classList.toggle("stop-scroll");
 });
 
 nav.addEventListener("click", (e) => {
     if (e.target.tagName === 'A') {
         navToggle.classList.remove("opened");
         nav.classList.remove("opened");
+        body.classList.remove("stop-scroll");
     }
 });
 

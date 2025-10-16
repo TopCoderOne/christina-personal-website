@@ -6,9 +6,8 @@
     --accordion-title-color: #BB5337;
     --accordion-hover-color: #fad9d1;
     --header-bg: #ffffff;
-    --nav-bg: #fae7e2;
+    --nav-bg: rgba(250, 231, 226, 0.9);
     --navlink-underline-color: #BB5337;
-    --font-lato: "Lato";
 }
 
 *,
@@ -76,13 +75,10 @@ button:active {
     background-color: transparent;
 }
 
-a:focus-visible,
-button:focus-visible {
-    outline: 2px solid #005fcc;
-    outline-offset: 2px;
-}
-
 /* Reset mobile styles________________________End */
+.stop-scroll {
+    overflow: hidden;
+}
 
 .container {
     width: 100%;
@@ -553,6 +549,14 @@ button:focus-visible {
         text-align: center;
     }
 
+    .accordion {
+        padding: 20px 0;
+    }
+
+    .accordion__title {
+        font-size: 15px;
+    }
+
     .footer__wrapper>address {
         justify-content: center;
         margin-bottom: 80px;
@@ -636,10 +640,6 @@ button:focus-visible {
 
     .accordion__text-content {
         max-width: 100%;
-    }
-
-    .accordion__title {
-        font-size: 15px;
     }
 
     .accordion__text {
