@@ -74,8 +74,8 @@ a:active,
 button:active {
     background-color: transparent;
 }
-
 /* Reset mobile styles________________________End */
+
 .stop-scroll {
     overflow: hidden;
 }
