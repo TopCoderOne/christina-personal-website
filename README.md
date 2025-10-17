@@ -67,7 +67,8 @@ project-root/
     └── font/
     └── image/
     │  └── *.png
-    │  └── *.webp
+    │  └── webp/
+    │     └── *.webp
     └── icon/
         └── *.svg
 ```
