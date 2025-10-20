@@ -1,4 +1,4 @@
-@import url(./assets/font/stylesheet.css);
+@import url(../assets/font/stylesheet.css);
 
 :root {
     --primary-text-color: #000000;
@@ -8,6 +8,7 @@
     --header-bg: #ffffff;
     --nav-bg: rgba(250, 231, 226, 0.9);
     --navlink-underline-color: #BB5337;
+    --font-lato: 'Lato';
 }
 
 *,
@@ -104,6 +105,10 @@ button:active {
     align-items: start;
 }
 
+.header__wrapper>.logo {
+    z-index: 1000000;
+}
+
 .header__nav-block {
     display: flex;
     gap: 80px;
@@ -124,7 +129,6 @@ button:active {
 .nav-toggle [class*='bar-'] {
     background-color: var(--accordion-title-color);
     display: block;
-    transform: rotate(0deg);
     transition: .2s ease all;
     border-radius: 8px;
     height: 2px;
