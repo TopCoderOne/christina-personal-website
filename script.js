@@ -36,3 +36,14 @@ accordions.addEventListener("click", (e) => {
     accordions.querySelectorAll(".accordion.active").forEach(item => item.classList.remove("active"));
     accordion.classList.toggle("active", !isActive);
 });
+
+// == Skeleton loader==
+document.querySelectorAll(".skeleton-loader img").forEach(img => {
+    img.addEventListener("load", () => {
+        img.parentElement.classList.add("loaded");
+    });
+    
+    if (img.complete) {
+        img.parentElement.classList.add("loaded");
+    }
+});

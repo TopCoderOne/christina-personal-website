@@ -75,6 +75,7 @@ a:active,
 button:active {
     background-color: transparent;
 }
+
 /* Reset mobile styles________________________End */
 
 .stop-scroll {
@@ -86,6 +87,55 @@ button:active {
     max-width: 1200px;
     margin: 0 auto;
     padding: 0 16px;
+}
+
+/* Skeleton-loader________________________ */
+.skeleton-loader {
+    position: relative;
+    display: inline-block;
+    overflow: hidden;
+}
+
+.skeleton-loader img {
+    display: block;
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+.skeleton-loader::before {
+    content: "Loading...";
+    color: #797777;
+    font-size: 15px;
+    font-weight: 100 !important;
+    font-style: normal !important;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(90deg, #fad9d1 25%, #f5c9be 50%, #f8d2c9 75%);
+    background-size: 200% 100%;
+    animation: loading 1.5s infinite;
+    transition: opacity 0.3s ease;
+}
+
+.skeleton-loader.loaded::before {
+    opacity: 0;
+}
+
+.skeleton-loader.loaded img {
+    opacity: 1;
+}
+
+@keyframes loading {
+    0% {
+        background-position: 200% 0;
+    }
+
+    100% {
+        background-position: -200% 0;
+    }
 }
 
 /* Header________________________ */
@@ -309,7 +359,6 @@ button:active {
 
 .accordion__img {
     width: 100%;
-    min-width: 300px;
     text-align: right;
 }
 
@@ -439,6 +488,13 @@ button:active {
     grid-template-rows: auto auto;
     grid-template-columns: 104px minmax(80px, 247px);
     gap: 18px 34px;
+}
+
+.footer__christina-img {
+    width: 104px;
+    height: 104px;
+    border-radius: 50%;
+    overflow: hidden;
 }
 
 .footer__christina-block>p {
